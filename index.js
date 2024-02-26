@@ -13,3 +13,5 @@ const randomly = (array1, array2, array3) => {
 
 }
 
+console.log(randomly(subjects, verbs, objects));
+
