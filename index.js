@@ -10,6 +10,27 @@ const collectiveSuccess = {
 
 let behaviors = [];
 
+const asciiArt = [
+    `
+     |\_/|       
+    / @ @ \       
+   ( > º < )     
+     >>x<<       
+    /  O  \,
+    
+    (\_/)
+   (='.'=)
+   (")_("),
+    .--.                    
+    '--' ,
+    /\                
+   /__\,
+   (^._.^),
+     ____
+   <(o.o )>   
+    `
+]
+
 for(let prop in collectiveSuccess){
     let optIdx = randomNumber(collectiveSuccess[prop].length)
 
