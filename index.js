@@ -1,17 +1,32 @@
-// Motivational Subject
-
-const subjects = ['Quality questions', 'Life', 'Never', 'Nothing great was ever', 'Quality'];
-const verbs = ['is', 'achieved ', 'create', 'is', 'gives'];
-const objects = ['a habit', 'up', 'without enthusiasm', 'perfect', 'a quality life'];
-
-const randomly = (array1, array2, array3) => {
-    let sub = array1[Math.floor(Math.random() * array1.length)];
-    let ver = array2[Math.floor(Math.random() * array2.length)];
-    let obj = array3[Math.floor(Math.random() * array2.length)];
-
-    return `${sub} ${ver} ${obj}`;
-
+const randomNumber = num => {
+    return Math.floor(Math.random() * num);
 }
 
-console.log(randomly(subjects, verbs, objects));
+const collectiveSuccess = {
+    feelings : ['bad', 'sad', 'Nothing great was ever', 'down'],
+    reactions : ['remember where you come', 'doing great ', 'create', 'try to not give up'],
+    nextSteps : ['will come', 'will make you proud', 'come with enthusiasm', 'perfect', 'gives you a quality life']
+}
+
+let behaviors = [];
+
+for(let prop in collectiveSuccess){
+    let optIdx = randomNumber(collectiveSuccess[prop].length)
+
+    switch(prop){
+        case 'feelings' : 
+            behaviors.push(`If never you feel "${collectiveSuccess[prop][optIdx]}"`)
+            break;
+        case 'reactions' :
+            behaviors.push(`Just ${collectiveSuccess[prop][optIdx]}`)
+            break;
+        case 'nextSteps' : 
+            behaviors.push(`And the result ${collectiveSuccess[prop][optIdx]}`)
+            break;
+        default : 
+            behaviors.push(`Nothing to say`);
+    }
+}
+
+console.log(behaviors);
 
